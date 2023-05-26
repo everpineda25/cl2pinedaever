@@ -1,0 +1,33 @@
+SET GLOBAL time_zone = '+8:00';
+CREATE DATABASE CL2_PINEDA;
+USE CL2_PINEDA;
+
+CREATE TABLE Area (
+cod_Area int primary key,
+nombre_Area varchar(25),
+jefe varchar(25)
+);
+
+CREATE TABLE Personal (
+cod_Tra int primary key,
+nombre_Tra varchar(50),
+sueldo_Tra varchar(10),
+cod_Area int,
+foreign key (cod_Area) references Area(cod_Area)
+);
+INSERT INTO Area VALUES (101,"Contabilidad","Diego");
+INSERT INTO Area VALUES (102,"Administracion","Luis");
+INSERT INTO Area VALUES (103,"Tecnologia","Maria");
+
+
+INSERT INTO Personal VALUES (1, "Juan Perez", "2500",101);
+INSERT INTO Personal VALUES (2, "Benito Diaz", "800",101);
+INSERT INTO Personal VALUES (3, "Paola Mendoza", "2900",101);
+
+INSERT INTO Personal VALUES (4, "Melisa Garcia", "5000",102);
+INSERT INTO Personal VALUES (5, "Gloria Manrique", "4000",102);
+INSERT INTO Personal VALUES (6, "Jean Tito", "6500",102);
+
+INSERT INTO Personal VALUES (7, "Ricardo Urbano", "1950",103);
+INSERT INTO Personal VALUES (8, "Dayana Mendez", "1890",103);
+INSERT INTO Personal VALUES (9, "Johana Hurtado", "2300",103);
